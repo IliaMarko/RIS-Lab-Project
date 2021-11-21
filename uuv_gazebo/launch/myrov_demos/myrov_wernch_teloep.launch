@@ -1,0 +1,14 @@
+<!--  -->
+<launch>
+ 
+ <!-- this will launch Gazebo with a rexrov model with its thruster_manager and control  -->
+    <include file="$(find uuv_gazebo)/launch/myrov_demos/myrov_default.launch">
+    </include>
+   
+ <!-- this will launch Gazebo with a empty underwater world model -->
+    <include file="$(find uuv_gazebo_worlds)/launch/empty_underwater_world.launch">
+    </include>
+ 
+    <node pkg="uuv_control_cascaded_pid" type="teleop_wernch_keyboard.py" name="teleop_wernch_keyboard" output="screen">
+    </node>
+</launch>

@@ -1,0 +1,9 @@
+<launch>
+    <rosparam file="$(find uuv_control_cascaded_pid)/config/rexrov/inertial.yaml" command="load"/>
+        <rosparam file="$(find uuv_control_cascaded_pid)/config/rexrov/vel_pid_control.yaml" command="load"/>
+    <rosparam file="$(find uuv_control_cascaded_pid)/config/rexrov/pos_pid_control.yaml" command="load"/>
+
+    <node pkg="uuv_control_cascaded_pid" type="force_torq_pub2.py" name="wernch_control" output="screen">
+    </node>
+   
+</launch>

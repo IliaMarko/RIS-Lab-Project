@@ -1,0 +1,17 @@
+<!--  -->
+<launch>
+ 
+ <!-- this will launch Gazebo with a rexrov model with its thruster_manager and control  -->
+    <include file="$(find uuv_gazebo)/launch/myrov_demos/myrov_default.launch">
+    </include>
+   
+ <!-- this will launch Gazebo with a empty underwater world model -->
+    <include file="$(find uuv_gazebo_worlds)/launch/empty_underwater_world.launch">
+    </include>
+ 
+ <!-- This will launch teleop_twist_keyboard node that's used to control robot using keyboard   -->
+    <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop">
+      <remap from="cmd_vel" to="/myrov/teleop_twist_keyboard/cmd_vel"/>
+    </node>
+ 
+</launch>

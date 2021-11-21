@@ -1,0 +1,8 @@
+<!--  -->
+<launch>
+ 
+ <!-- this will launch Gazebo with a rexrov model with its thruster_manager and control  -->
+    <include file="$(find uuv_gazebo)/launch/rexrov_demos/rexrov_wrench_control.launch">
+    </include>
+   
+</launch>
